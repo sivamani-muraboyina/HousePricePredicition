@@ -30,3 +30,11 @@ if st.button("Calculate Estimated Value"):
     
     final_price = prediction[0] * 100000
     st.metric(label="Estimated Price", value=f"${final_price:,.2f}")
+
+    # 5. Add a Visual Map
+st.write("---") # Adds a horizontal line
+st.subheader("Selected Location Map")
+
+# Streamlit needs a simple dataframe or array with lat/lon to show a map
+map_data = np.array([[lat, lon]])
+st.map(data=None, latitude=lat, longitude=lon, zoom=6)
