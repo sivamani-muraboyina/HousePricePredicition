@@ -35,9 +35,8 @@ if st.button("Calculate Estimated Value"):
 st.write("---")
 st.subheader("Selected Location Map")
 
-# We create a small dataframe so the map knows exactly where to point
 import pandas as pd
 map_df = pd.DataFrame({'lat': [lat], 'lon': [lon]})
 
-# This will draw a map centered on your coordinates
-st.map(map_df, zoom=10 if lat != 0 else 5)
+# Adding color and size makes the point stand out and often pulls more detail
+st.map(map_df, latitude='lat', longitude='lon', zoom=10, color='#ff0000', size=100)
