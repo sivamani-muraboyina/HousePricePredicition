@@ -31,12 +31,4 @@ if st.button("Calculate Estimated Value"):
     final_price = prediction[0] * 100000
     st.metric(label="Estimated Price", value=f"${final_price:,.2f}")
 
-   # 5. Add a Visual Map
-st.write("---")
-st.subheader("Selected Location Map")
-
-import pandas as pd
-map_df = pd.DataFrame({'lat': [lat], 'lon': [lon]})
-
-# Adding color and size makes the point stand out and often pulls more detail
-st.map(map_df, latitude='lat', longitude='lon', zoom=10, color='#ff0000', size=100)
+  
